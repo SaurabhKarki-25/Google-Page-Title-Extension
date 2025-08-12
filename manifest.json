@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Title Fetcher",
+  "version": "1.0",
+  "description": "Shows the title of the current tab in popup.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "title-icon_630753-10.jpg"
+  },
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"]
+}
