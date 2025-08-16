@@ -1,12 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Tab Title Fetcher",
+  "name": "LinkedIn Scraper",
   "version": "1.0",
-  "description": "Shows the title of the current tab in popup.",
+  "permissions": ["tabs", "scripting", "activeTab", "storage"],
+  "host_permissions": ["https://www.linkedin.com/*", "http://localhost:5000/*"],
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": "title-icon_630753-10.jpg"
+    "default_popup": "popup.html"
   },
-  "permissions": ["tabs"],
-  "host_permissions": ["<all_urls>"]
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+  "https://www.linkedin.com/*",
+  "http://localhost:5000/*"
+]
 }
